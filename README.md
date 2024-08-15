@@ -1,51 +1,70 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Tip Calculator App Solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my solution to the [Tip Calculator App challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX). The challenge helped me enhance my skills in building practical applications and improve my frontend development abilities.
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Overview](#overview)
+  - [The Challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My Process](#my-process)
+  - [Built With](#built-with)
+  - [What I Learned](#what-i-learned)
+  - [Continued Development](#continued-development)
+  - [Useful Resources](#useful-resources)
+- [Author](#author)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### The Challenge
 
-- Configure the top-level `parserOptions` property like this:
+Users should be able to:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Calculate the correct tip and total cost of the bill per person
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Screenshot
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+![Screenshot of the Tip Calculator App](./screenshot.png)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
-# Tip-calculator-Typescript-SCSS
+### Links
+
+- Solution URL: [GitHub Repository](https://github.com/TedJenkler/Tip-calculator-Typescript-SCSS)
+- Live Site URL: [Live Demo](https://tipcalc-typescript-scss.netlify.app/)
+
+## My Process
+
+### Built With
+
+- [Vite](https://vitejs.dev/) - A frontend build tool for fast development with a modern workflow.
+- [React](https://reactjs.org/) - A JavaScript library for building user interfaces.
+- [SCSS](https://sass-lang.com/documentation) - For advanced styling and creating flexible, maintainable stylesheets.
+- [TypeScript](https://www.typescriptlang.org/docs) - For adding type safety and enhancing the development experience with static types.
+
+### What I Learned
+
+During this project, I gained more experience in the following areas:
+
+- **SCSS:** Enhanced understanding of SCSS features like mixins, maps, variables, and responsive design.
+- **TypeScript:** Improved skills in TypeScript, including type definitions, interfaces, and generics for better type safety and code quality.
+- **Custom Hooks:** Developed and utilized custom React hooks for better code organization and reusability.
+- **Animations:** Gained experience in creating smooth and interactive animations to enhance the user interface and overall user experience.
+
+### Continued Development
+
+- Plan to implement the tip calculation using Three.js for a fun and interactive 3D experience.
+
+### Useful Resources
+
+- [SCSS Documentation](https://sass-lang.com/documentation) - For comprehensive details on SCSS syntax and features.
+- [TypeScript Documentation](https://www.typescriptlang.org/docs) - For learning TypeScript syntax, features, and best practices.
+- [Vite Documentation](https://vitejs.dev/) - For understanding and configuring Vite as a build tool and development server.
+
+## Author
+
+- Frontend Mentor - [@TedJenkler](https://www.frontendmentor.io/profile/TedJenkler)
+- LinkedIn - [Teodor Jenkler](https://www.linkedin.com/in/tedjenklerwebdeveloper/)
+- X - [@TJenkler](https://x.com/TJenkler)
+- Discord - [TedJenkler](https://discord.com/users/TedJenkler)

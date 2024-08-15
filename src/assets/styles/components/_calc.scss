@@ -142,13 +142,14 @@
       #disabled {
         background-color: $disabled;
         color: $darkgreen;
+        width: 265px;
       }
   
       .reset-button {
         display: flex;
+        width: 265px;
         align-items: center;
         justify-content: center;
-        width: 100%;
         font-size: 1.25rem;
         font-weight: 700;
         min-height: 3rem;

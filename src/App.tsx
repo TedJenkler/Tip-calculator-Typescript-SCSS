@@ -132,7 +132,7 @@ function App() {
             </div>
             <div className="result-value">
               <p>
-                {people !== "" ? Math.floor((Number(userInput) / Number(people)) * 100) / 100 : null}
+                  {people !== "" ? Math.floor((Number(userInput) / Number(people)) * 100) / 100 : null}
               </p>
             </div>
           </div>
