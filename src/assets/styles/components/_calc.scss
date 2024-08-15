@@ -47,7 +47,7 @@
   
       .input-container {
         position: relative;
-        
+  
         .input-icon {
           position: absolute;
           top: 50%;
@@ -162,5 +162,39 @@
           outline: none;
         }
       }
+    }
+  }
+  
+  @include respond-to(xl) {
+    .form {
+      display: flex;
+      padding: 2.8125rem 3rem 3rem 3rem;
+      gap: 3rem;
+      border-radius: 1.5625rem;
+  
+      fieldset {
+        width: 50%;
+      }
+  
+      section {
+        position: relative;
+        width: 50%;
+      }
+    }
+  
+    #disabled {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 20.8125rem;
+    }
+  
+    .reset-button {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 20.8125rem;
     }
   }
