@@ -72,6 +72,8 @@
         border: 0.0625rem solid #ccc;
         border-radius: 0.25rem;
         cursor: pointer;
+        transition: all 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   
         &:hover,
         &:focus {
@@ -79,6 +81,8 @@
           color: $darkgreen;
           border: none;
           outline: none;
+          transform: translateY(-3px);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
       }
   
@@ -154,12 +158,14 @@
         border: none;
         border-radius: 0.3125rem;
         cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   
         &:focus,
         &:hover {
           background-color: $btnhover;
           border: none;
           outline: none;
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
       }
     }
