@@ -1,0 +1,166 @@
+.form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1.5625rem 1.5625rem 0 0;
+  
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+  
+      legend {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+    }
+  
+    .form-group {
+      margin-bottom: 2rem;
+  
+      label {
+        display: block;
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+  
+      input {
+        width: 100%;
+        padding: 0 1.1875rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        border-radius: 0.3125rem;
+        min-height: 3rem;
+        border: none;
+        background-color: $input;
+        color: $darkgreen;
+        outline: none;
+        text-align: end;
+  
+        &:focus {
+          outline: auto;
+          outline: 2px solid $lightgreen;
+        }
+      }
+  
+      .input-container {
+        position: relative;
+        
+        .input-icon {
+          position: absolute;
+          top: 50%;
+          left: 1.25rem;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 1rem;
+      width: 100%;
+  
+      button {
+        padding: 0.75rem;
+        font-size: 1.5rem;
+        background-color: $darkgreen;
+        color: white;
+        border: 0.0625rem solid #ccc;
+        border-radius: 0.25rem;
+        cursor: pointer;
+  
+        &:hover,
+        &:focus {
+          background-color: $lightgreen;
+          color: $darkgreen;
+          border: none;
+          outline: none;
+        }
+      }
+  
+      input {
+        padding: 0.375rem 1.1875rem;
+        font-size: 1.5rem;
+        border: none;
+        border-radius: 0.3125rem;
+        background-color: $input;
+        outline: none;
+        text-align: center;
+      }
+    }
+  
+    .results-section {
+      background-color: $darkgreen;
+      border-radius: 0.9375rem;
+      border: none;
+      padding: 2.3125rem 1.375rem 1.5rem 1.5rem;
+  
+      h2 {
+        margin: 0;
+        margin-bottom: 1rem;
+        color: white;
+      }
+  
+      .result-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+  
+        .result-title {
+          h3 {
+            font-size: 1rem;
+            margin: 0;
+            color: white;
+          }
+  
+          p {
+            margin: 0;
+            font-size: 0.8125rem;
+            color: $olive;
+          }
+        }
+  
+        .result-value {
+          p {
+            font-size: 2rem;
+            word-spacing: -0.041875rem;
+            font-weight: bold;
+            margin: 0;
+            color: $lightgreen;
+          }
+        }
+      }
+  
+      #disabled {
+        background-color: $disabled;
+        color: $darkgreen;
+      }
+  
+      .reset-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 1.25rem;
+        font-weight: 700;
+        min-height: 3rem;
+        padding: 0;
+        background-color: $lightgreen;
+        color: $darkgreen;
+        border: none;
+        border-radius: 0.3125rem;
+        cursor: pointer;
+  
+        &:focus,
+        &:hover {
+          background-color: $btnhover;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }

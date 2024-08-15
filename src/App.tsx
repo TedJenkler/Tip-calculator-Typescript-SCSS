@@ -1,9 +1,21 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useState, useEffect } from "react";
+import logo from './assets/styles/images/SPLITTER.png';
+import { useKeyboardNavigation } from "./hooks/useKeyboardNavigation";
+import profile from './assets/styles/images/profile.png';
+import dollar from './assets/styles/images/dollar.png';
 
 function App() {
   const [userInput, setUserInput] = useState<string>('');
   const [tips, setTips] = useState<string>('');
   const [people, setPeople] = useState<string>('');
+
+  const elementsRef = useKeyboardNavigation();
+
+  useEffect(() => {
+    if (elementsRef.current[0]) {
+      elementsRef.current[0].focus();
+    }
+  }, []);
 
   const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -44,77 +56,91 @@ function App() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <fieldset>
-        <legend>Bill and Tips</legend>
+    <>
+      <img className="logo" src={logo} alt="logo" />
+      <form className="form" onSubmit={handleSubmit}>
+        <fieldset>
+          <legend>Bill and Tips</legend>
 
-        <div>
+          <div className="form-group">
           <label htmlFor="billAmount">Bill Amount</label>
-          <input
-            id="billAmount"
-            name="userInput"
-            onChange={handleInput}
-            value={userInput}
-            type="text"
-          />
-        </div>
-
-        <div>
-          <label>Select Tip %</label>
-          <div className="grid_container">
-            <button type="button" onClick={handleTips('5')}>5%</button>
-            <button type="button" onClick={handleTips('10')}>10%</button>
-            <button type="button" onClick={handleTips('15')}>15%</button>
-            <button type="button" onClick={handleTips('25')}>25%</button>
-            <button type="button" onClick={handleTips('50')}>50%</button>
-            <input
-              onChange={customTip}
-              value={tips}
-              placeholder="Custom"
-              aria-label="Custom Tip Percentage"
-            />
+            <div className="input-container">
+              <input
+                ref={(el) => el && (elementsRef.current[0] = el)}
+                id="billAmount"
+                name="userInput"
+                onChange={handleInput}
+                value={userInput}
+                type="text"
+                placeholder="0"
+              />
+              <img src={dollar} alt="dollar" className="input-icon" />
+            </div>
           </div>
-        </div>
 
-        <div>
+          <div className="form-group">
+            <label>Select Tip %</label>
+            <div className="grid-container">
+              <button ref={(el) => el && (elementsRef.current[1] = el)} type="button" onClick={handleTips('5')}>5%</button>
+              <button ref={(el) => el && (elementsRef.current[2] = el)} type="button" onClick={handleTips('10')}>10%</button>
+              <button ref={(el) => el && (elementsRef.current[3] = el)} type="button" onClick={handleTips('15')}>15%</button>
+              <button ref={(el) => el && (elementsRef.current[4] = el)} type="button" onClick={handleTips('25')}>25%</button>
+              <button ref={(el) => el && (elementsRef.current[5] = el)} type="button" onClick={handleTips('50')}>50%</button>
+                <input
+                  ref={(el) => el && (elementsRef.current[6] = el)}
+                  onChange={customTip}
+                  value={tips}
+                  placeholder="Custom"
+                  aria-label="Custom Tip Percentage"
+                />
+            </div>
+          </div>
+
+          <div className="form-group">
           <label htmlFor="numberOfPeople">Number of People</label>
-          <input
-            id="numberOfPeople"
-            onChange={handlePeopleInput}
-            value={people}
-          />
-        </div>
-      </fieldset>
+            <div className="input-container">
+              <input
+                ref={(el) => el && (elementsRef.current[7] = el)}
+                id="numberOfPeople"
+                onChange={handlePeopleInput}
+                value={people}
+                placeholder="0"
+              />
+              <img src={profile} alt="profile" className="input-icon" />
+            </div>
+          </div>
+        </fieldset>
 
-      <section>
-        <h2>Results</h2>
-        <div>
-          <div>
-            <h3>Tip Amount</h3>
-            <p>/ person</p>
+        <section className="results-section">
+          <h2>Results</h2>
+          <div className="result-item">
+            <div className="result-title">
+              <h3>Tip Amount</h3>
+              <p>/ person</p>
+            </div>
+            <div className="result-value">
+              <p>
+                {people !== "" ? Math.floor((Number(userInput) * (Number(tips) / 100)) / Number(people) * 100) / 100 : null}
+              </p>
+            </div>
           </div>
-          <div>
-            <p>
-              {people !== "" ? (Number(userInput) * (Number(tips) / 100)) / Number(people) : null}
-            </p>
-          </div>
-        </div>
 
-        <div>
-          <div>
-            <h3>Total</h3>
-            <p>/ person</p>
+          <div className="result-item">
+            <div className="result-title">
+              <h3>Total</h3>
+              <p>/ person</p>
+            </div>
+            <div className="result-value">
+              <p>
+                {people !== "" ? Math.floor((Number(userInput) / Number(people)) * 100) / 100 : null}
+              </p>
+            </div>
           </div>
-          <div>
-            <p>
-              {people !== "" ? (Number(userInput) / Number(people)) : null}
-            </p>
-          </div>
-        </div>
 
-        <button type="button" onClick={handleReset}>RESET</button>
-      </section>
-    </form>
+          <button ref={(el) => el && (elementsRef.current[8] = el)} id={!userInput && !tips && !people ? "disabled" : ""} disabled={!userInput && !tips && !people} className="reset-button" type="button" onClick={handleReset}>RESET</button>
+        </section>
+      </form>
+    </>
   );
 }
 

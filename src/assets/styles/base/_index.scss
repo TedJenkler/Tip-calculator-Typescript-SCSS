@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    background-color: $superlightgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.55rem;
+    padding-top: 3.125rem;
+    .logo {
+        width: 5.42rem;
+        height: 3.32rem;
+    }
+}
