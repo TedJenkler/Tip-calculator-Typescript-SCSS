@@ -20,7 +20,7 @@ function App() {
   const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const numberValue = Number(value);
-    if (!isNaN(numberValue)) {
+    if (!isNaN(numberValue) && numberValue < 100000000000) {
       setUserInput(value);
     }
   };
@@ -119,8 +119,8 @@ function App() {
               <p>/ person</p>
             </div>
             <div className="result-value">
-              <p>
-                {people !== "" ? Math.floor((Number(userInput) * (Number(tips) / 100)) / Number(people) * 100) / 100 : null}
+              <p>$
+                {people !== "" ? Math.floor((Number(userInput) * (Number(tips) / 100)) / Number(people) * 100) / 100 : 0}
               </p>
             </div>
           </div>
@@ -131,8 +131,8 @@ function App() {
               <p>/ person</p>
             </div>
             <div className="result-value">
-              <p>
-                  {people !== "" ? Math.floor((Number(userInput) / Number(people)) * 100) / 100 : null}
+              <p>$
+                  {people !== "" ? Math.floor((Number(userInput) / Number(people)) * 100) / 100 : 0}
               </p>
             </div>
           </div>
