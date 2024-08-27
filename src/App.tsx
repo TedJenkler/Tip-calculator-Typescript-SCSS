@@ -51,14 +51,10 @@ function App() {
     setTips("");
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
-
   return (
     <>
       <img className="logo" src={logo} alt="logo" />
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={(e) => e.preventDefault()}>
         <fieldset>
           <legend>Bill and Tips</legend>
 
@@ -139,7 +135,7 @@ function App() {
             </div>
           </div>
 
-          <button ref={(el) => el && (elementsRef.current[8] = el)} id={!userInput && !tips && !people ? "disabled" : ""} disabled={!userInput && !tips && !people} className="reset-button" type="button" onClick={handleReset}>RESET</button>
+          <button ref={(el) => el && (elementsRef.current[8] = el)} id={!userInput && !tips && !people ? "disabled" : ""} disabled={!userInput && !tips && !people} className="reset-button" type="button" onClick={handleReset} aria-label="reset">RESET</button>
         </section>
       </form>
     </>

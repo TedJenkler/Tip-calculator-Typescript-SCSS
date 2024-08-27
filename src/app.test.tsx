@@ -153,3 +153,32 @@ test('Filling in everything gives the correct value', () => {
     expect(perPerson).toHaveTextContent('$4.27');
     expect(totalPerPerson).toHaveTextContent('$32.79');
   });
+
+  
+  test('focuses on the first input on first render', () => {
+    const { getByLabelText } = render(<App />);
+    
+    const firstInput = getByLabelText('billAmount');
+
+    expect(firstInput).toHaveFocus();
+  });
+
+  test('Clicking on reset resets everything', () => {
+    render(<App />);
+
+    const priceInput = screen.getByLabelText('billAmount');
+    const tipInput = screen.getByLabelText('Custom Tip Percentage');
+    const peopleInput = screen.getByLabelText('Number of people');
+    const perPerson = screen.getByLabelText('tip per person');
+    const totalPerPerson = screen.getByLabelText('total per person');
+
+    const resetbtn = screen.getByLabelText('reset');
+
+    fireEvent.click(resetbtn);
+
+    expect(priceInput).toHaveValue("")
+    expect(tipInput).toHaveValue("")
+    expect(peopleInput).toHaveValue("")
+    expect(perPerson).toHaveTextContent("$0")
+    expect(totalPerPerson).toHaveTextContent("$0")
+  })
