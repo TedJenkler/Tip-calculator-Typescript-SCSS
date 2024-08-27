@@ -73,6 +73,7 @@ function App() {
                 value={userInput}
                 type="text"
                 placeholder="0"
+                aria-label="billAmount"
               />
               <img src={dollar} alt="dollar" className="input-icon" />
             </div>
