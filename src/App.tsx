@@ -82,11 +82,11 @@ function App() {
           <div className="form-group">
             <label>Select Tip %</label>
             <div className="grid-container">
-              <button ref={(el) => el && (elementsRef.current[1] = el)} type="button" onClick={handleTips('5')}>5%</button>
-              <button ref={(el) => el && (elementsRef.current[2] = el)} type="button" onClick={handleTips('10')}>10%</button>
-              <button ref={(el) => el && (elementsRef.current[3] = el)} type="button" onClick={handleTips('15')}>15%</button>
-              <button ref={(el) => el && (elementsRef.current[4] = el)} type="button" onClick={handleTips('25')}>25%</button>
-              <button ref={(el) => el && (elementsRef.current[5] = el)} type="button" onClick={handleTips('50')}>50%</button>
+              <button aria-label="5%" ref={(el) => el && (elementsRef.current[1] = el)} type="button" onClick={handleTips('5')}>5%</button>
+              <button aria-label="10%" ref={(el) => el && (elementsRef.current[2] = el)} type="button" onClick={handleTips('10')}>10%</button>
+              <button aria-label="15%" ref={(el) => el && (elementsRef.current[3] = el)} type="button" onClick={handleTips('15')}>15%</button>
+              <button aria-label="25%" ref={(el) => el && (elementsRef.current[4] = el)} type="button" onClick={handleTips('25')}>25%</button>
+              <button aria-label="50%" ref={(el) => el && (elementsRef.current[5] = el)} type="button" onClick={handleTips('50')}>50%</button>
                 <input
                   ref={(el) => el && (elementsRef.current[6] = el)}
                   onChange={customTip}
@@ -106,6 +106,7 @@ function App() {
                 onChange={handlePeopleInput}
                 value={people}
                 placeholder="0"
+                aria-label="Number of people"
               />
               <img src={profile} alt="profile" className="input-icon" />
             </div>
@@ -120,7 +121,7 @@ function App() {
               <p>/ person</p>
             </div>
             <div className="result-value">
-              <p>$
+              <p aria-label="tip per person">$
                 {people !== "" ? Math.floor((Number(userInput) * (Number(tips) / 100)) / Number(people) * 100) / 100 : 0}
               </p>
             </div>
@@ -132,8 +133,8 @@ function App() {
               <p>/ person</p>
             </div>
             <div className="result-value">
-              <p>$
-                  {people !== "" ? Math.floor((Number(userInput) / Number(people)) * 100) / 100 : 0}
+              <p aria-label="total per person">$
+              { people && !isNaN(Number(people)) && Number(people) !== 0 ? Math.round((Number(userInput) + (Number(userInput) * (Number(tips) / 100))) / Number(people) * 100) / 100 : 0 }
               </p>
             </div>
           </div>
