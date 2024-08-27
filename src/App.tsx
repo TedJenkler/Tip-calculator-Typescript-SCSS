@@ -20,7 +20,7 @@ function App() {
   const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const numberValue = Number(value);
-    if (!isNaN(numberValue) && numberValue < 100000000000) {
+    if (!isNaN(numberValue) && numberValue < 1000000000) {
       setUserInput(value);
     }
   };
