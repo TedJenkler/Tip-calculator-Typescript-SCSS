@@ -182,3 +182,40 @@ test('Filling in everything gives the correct value', () => {
     expect(perPerson).toHaveTextContent("$0")
     expect(totalPerPerson).toHaveTextContent("$0")
   })
+
+test('should focus on the next element when pressing ArrowRight', () => {
+  render(<App />);
+
+  const billAmountInput = screen.getByLabelText('billAmount');
+  const button5 = screen.getByLabelText('5%');
+  const button10 = screen.getByLabelText('10%');
+  const button15 = screen.getByLabelText('15%');
+  const button25 = screen.getByLabelText('25%');
+  const button50 = screen.getByLabelText('50%');
+  const tipInput = screen.getByLabelText('Custom Tip Percentage');
+  const peopleInput = screen.getByLabelText('Number of people');
+
+  billAmountInput.focus();
+  expect(billAmountInput).toHaveFocus();
+
+  fireEvent.keyDown(billAmountInput, { key: 'ArrowRight' });
+  expect(button5).toHaveFocus();
+
+  fireEvent.keyDown(button5, { key: 'ArrowRight' });
+  expect(button10).toHaveFocus();
+
+  fireEvent.keyDown(button10, { key: 'ArrowRight' });
+  expect(button15).toHaveFocus();
+
+  fireEvent.keyDown(button15, { key: 'ArrowRight' });
+  expect(button25).toHaveFocus();
+
+  fireEvent.keyDown(button25, { key: 'ArrowRight' });
+  expect(button50).toHaveFocus();
+
+  fireEvent.keyDown(button50, { key: 'ArrowRight' });
+  expect(tipInput).toHaveFocus();
+
+  fireEvent.keyDown(tipInput, { key: 'ArrowRight' });
+  expect(peopleInput).toHaveFocus();
+});

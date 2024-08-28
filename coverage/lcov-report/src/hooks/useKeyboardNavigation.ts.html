@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">37.5% </span>
+                <span class="strong">87.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/24</span>
+                <span class='fraction'>21/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">68.42% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/19</span>
+                <span class='fraction'>13/19</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">39.13% </span>
+                <span class="strong">91.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/23</span>
+                <span class='fraction'>21/23</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -113,46 +113,46 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">28x</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">29x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
-<span class="cline-any cline-yes">15x</span>
+<span class="cline-any cline-yes">16x</span>
+<span class="cline-any cline-yes">16x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">28x</span>
+<span class="cline-any cline-yes">29x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useRef } from 'react';
 &nbsp;
 type FocusableElement = HTMLButtonElement | HTMLInputElement;
@@ -161,31 +161,31 @@ export function useKeyboardNavigation() {
   const elementsRef = useRef&lt;FocusableElement[]&gt;([]);
 &nbsp;
   useEffect(() =&gt; {
-    const handleKeyDown = <span class="fstat-no" title="function not covered" >(e</span>vent: KeyboardEvent) =&gt; {
-      const { key } = <span class="cstat-no" title="statement not covered" >event;</span>
+    const handleKeyDown = (event: KeyboardEvent) =&gt; {
+      const { key } = event;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      <span class="missing-if-branch" title="if path not taken" >I</span>if (key === 'ArrowUp' || key === 'ArrowDown' || key === 'ArrowLeft' || key === 'ArrowRight') {</span>
-<span class="cstat-no" title="statement not covered" >        event.preventDefault();</span>
+      if (key === 'ArrowUp' || key === 'ArrowDown' || key === 'ArrowLeft' || key === 'ArrowRight') {
+        event.preventDefault();
 &nbsp;
-        const focusedElement = <span class="cstat-no" title="statement not covered" >document.activeElement as HTMLElement;</span>
-        const index = <span class="cstat-no" title="statement not covered" >elementsRef.current.indexOf(focusedElement as FocusableElement);</span>
+        const focusedElement = document.activeElement as HTMLElement;
+        const index = elementsRef.current.indexOf(focusedElement as FocusableElement);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        <span class="missing-if-branch" title="if path not taken" >I</span>if (index === -1) <span class="cstat-no" title="statement not covered" >return;</span></span>
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (index === -1) <span class="cstat-no" title="statement not covered" >return;</span>
 &nbsp;
         let newIndex: number;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (key === 'ArrowUp' || key === 'ArrowLeft') {</span>
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (key === 'ArrowUp' || key === 'ArrowLeft') {
 <span class="cstat-no" title="statement not covered" >          newIndex = index &gt; 0 ? index - 1 : elementsRef.current.length - 1;</span>
-        } else <span class="cstat-no" title="statement not covered" >if (key === 'ArrowDown' || key === 'ArrowRight') {</span>
-<span class="cstat-no" title="statement not covered" >          newIndex = index &lt; elementsRef.current.length - 1 ? index + 1 : 0;</span>
-        } else {
+        } else if (key === 'ArrowDown' || key === 'ArrowRight') {
+          newIndex = index &lt; elementsRef.current.length - 1 ? index + 1 : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >          return;</span>
         }
 &nbsp;
-        const newElement = <span class="cstat-no" title="statement not covered" >elementsRef.current[newIndex];</span>
+        const newElement = elementsRef.current[newIndex];
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        <span class="missing-if-branch" title="if path not taken" >I</span>if (newElement) {</span>
-<span class="cstat-no" title="statement not covered" >          newElement.focus();</span>
+        if (newElement) {
+          newElement.focus();
         }
       }
     };
@@ -205,7 +205,7 @@ export function useKeyboardNavigation() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-27T23:22:38.489Z
+                at 2024-08-28T00:05:19.635Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
